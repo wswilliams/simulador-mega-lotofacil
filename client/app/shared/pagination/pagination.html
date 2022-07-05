@@ -1,0 +1,59 @@
+<style>
+    .pagination {
+        display: table;
+        padding: 0;
+        margin: 0;
+    }
+    .pagination li span {
+        cursor: pointer;
+        color: inherit;
+    }
+
+    .pagination.inline {
+        display: inline-block;
+    }
+    .pagination-container.center-content {
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .pagination > .active > a, .pagination > .active > a:focus, 
+    .pagination > .active > a:hover, 
+    .pagination > .active > span, 
+    .pagination > .active > span:focus, 
+    .pagination > .active > span:hover{
+        background-color: rgb(252, 127, 7);
+        border-color: rgb(252, 127, 7);
+    }
+
+    .pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+        background-color: #eee;
+        border-color: #ddd;
+        color: #000;
+    }
+</style>
+<div class="col-md-12 no-p">
+    <p class="ng-binding">{{resultSearchMsg}}</p>
+</div>
+<div class="col-md-12 pagination-container center-content no-p" ng-show="pagesNumber.length > 1">
+    <ul class="pagination inline" style="text-align: center">
+        <li ng-click="paginationStart()">
+            <span aria-hidden="true"> Início </span>
+        </li>
+        <li ng-click="paginationPrev()" ng-disabled="btnPrev" class="{{ btnPrev ? 'disabled' : '' }}">
+            <span aria-hidden="true"> &laquo;</span>
+        </li>
+
+        <li ng-repeat="pages in pagesNumber" ng-click="paginationNumber(pages - 1)" class="{{page+1==pages?'active':''}}">
+            <span>{{pages}}</span>
+        </li>
+        <li ng-click="paginationNext()" ng-disabled="btnNext" class="{{btnNext?'disabled':''}}">
+            <span aria-hidden="true"> &raquo; </span>
+        </li>
+        <li ng-click="paginationStop()">
+            <span aria-hidden="true"> Fim </span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,583 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 21/06/2016, 13:28:05
+    Author     : bruno
+*/
+
+
+
+
+/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+
+/* Account for fixed navbar */
+
+
+
+
+
+
+
+
+
+
+
+body {
+
+    margin-bottom: 120px;
+}
+
+form input {
+    border-radius: 0px !important;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    min-width: 1024px;
+}
+
+/* Don't let the lead text change font-size. */
+.lead {
+    font-size: 16px;
+}
+
+/* Finesse the page header spacing */
+.page-header {
+    margin-bottom: 30px;
+}
+.page-header .lead {
+    margin-bottom: 10px;
+}
+
+
+/* Non-responsive overrides
+ *
+ * Utilize the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+    width: 960px;
+    max-width: none !important;
+}
+
+/* Demonstrate the grids */
+.col-xs-4 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color:#F0F8FF;
+    background-color: #F0F8FF;
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);
+}
+
+.container .navbar-header,
+.container .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+    height: 80px;
+    float: left;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+    visibility: visible !important;
+}
+
+.navbar-toggle {
+    display: none;
+}
+.navbar-collapse {
+    border-top: 0;
+}
+
+.navbar-brand {
+    margin-left: -15px;
+}
+
+/* Always apply the floated nav */
+.navbar-nav {
+    float: left;
+    margin: 0;
+}
+.navbar-nav > li {
+    float: left;
+}
+.navbar-nav > li > a {
+    padding: 15px;
+}
+
+/* Redeclare since we override the float above */
+.navbar-nav.navbar-right {
+    float: right;
+}
+
+/* Undo custom dropdowns */
+.navbar .navbar-nav .open .dropdown-menu {
+    position: absolute;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-width: 0 1px 1px;
+    border-radius: 0 0 4px 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #333;
+}
+
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fff !important;
+    background-color: #2F4F4F;
+}
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #999 !important;
+    background-color: transparent !important;
+}
+
+/* Undo form expansion */
+.navbar-form {
+    float: left;
+    width: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* Copy-pasted from forms.less since we mixin the .form-inline styles. */
+.navbar-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.navbar-form .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.navbar-form .form-control-static {
+    display: inline-block;
+}
+
+.navbar-form .input-group {
+    display: inline-table;
+    vertical-align: middle;
+}
+
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn,
+.navbar-form .input-group .form-control {
+    width: auto;
+}
+
+.navbar-form .input-group > .form-control {
+    width: 100%;
+}
+
+.navbar-form .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.navbar-form .radio,
+.navbar-form .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.navbar-form .radio label,
+.navbar-form .checkbox label {
+    padding-left: 0;
+}
+
+.navbar-form .radio input[type="radio"],
+.navbar-form .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+}
+
+.navbar-form .has-feedback .form-control-feedback {
+    top: 0;
+}
+
+/* Undo inline form compaction on small screens */
+.form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.form-inline .form-control-static {
+    display: inline-block;
+}
+
+.form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+}
+.form-inline .input-group .input-group-addon,
+.form-inline .input-group .input-group-btn,
+.form-inline .input-group .form-control {
+    width: auto;
+}
+
+.form-inline .input-group > .form-control {
+    width: 100%;
+}
+
+.form-inline .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.form-inline .radio,
+.form-inline .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.form-inline .radio label,
+.form-inline .checkbox label {
+    padding-left: 0;
+}
+
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+}
+
+.form-inline .has-feedback .form-control-feedback {
+    top: 0;
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+
+}
+
+.head{
+    width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 1px;
+}
+
+.user-login{
+    color: #2F4F4F !important;
+    font-size: 15px;
+
+}
+.head .navbar{
+    background: #FFFFFF;
+    margin-bottom: 0px;
+    border: 0px;
+    color: #F0F8FF;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.logo{
+    width: 213px;
+    height: 24px;
+}
+.center
+    {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        align-items: center;
+    }
+.logo1{
+    width: 100px;
+    height: 70px;
+}
+.text-center .img-responsive {
+    margin: 0 auto;
+}
+.menu .navbar{
+    border: 0px;
+    border-radius:0px;
+    margin-bottom: 0px;
+    background-color: #2F4F4F;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+.menu .container-fluid{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+.navbar-menu .navbar-nav {
+    width: 100%;
+    margin-bottom: 0px;
+
+    text-align: center;
+}
+.navbar-menu .navbar-nav > li {
+    float: none;
+    display: inline-block;
+}
+
+.navbar-menu .navbar-nav > .open > a, .navbar-menu .navbar-nav > .open > a:focus, .navbar-menu .navbar-nav > .open > a:hover{
+    background-color: #5C889C;
+    color: #ffffff !important;
+}
+.navbar-menu .navbar-nav > .active > a, .navbar-menu .navbar-nav > .active > a:focus, .navbar-menu .navbar-nav > .active > a:hover{
+    background-color: #5C889C;
+    color: #ffffff !important;
+}
+.navbar-menu .navbar-nav > li > a:hover{
+    color: #cfcfd0 !important;
+}
+.navbar-menu .navbar-nav > li > a {
+    color: #FFFFFF !important;
+    font-size: 18px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:#2F4F4F; 
+    background-size: cover;
+    background-position: center;
+    display: block;
+    text-align: right;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.page-top{
+    padding: 20px 0px;
+    background: #F0F8FF;
+    opacity: 0.369px;
+    margin-bottom: 20px;
+}
+
+.page-top-text{
+    margin: 0px;
+    font-size: 25px;
+    color: rgb(149,149,149);
+}
+
+.page-text-camp{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(149,149,149) !important;
+}
+
+.page-text-read{
+    font-size: 16px;
+    font-weight: bold;
+    color: #d9534f !important;
+}
+.page-text-orange{
+    font-size: 16px;
+    font-weight: bold;
+    color: #f0ad4e !important;
+}
+.page-text-green{
+    font-size: 16px;
+    font-weight: bold;
+    color: #5cb85c !important;
+}
+.page-text-span{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(149,149,149) !important;
+}
+.page-text-span-inter{
+    font-size: 12px;
+    color: rgb(149,149,149) !important;
+}
+.page-text{
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #5C889C;
+}
+.page-text-infor{
+    font-size: 16px;
+    color: #615c5c;
+}
+.text-label-input {
+    font-size: 16px  !important;
+    color: #2E8B57  !important;
+    font-weight:normal !important;
+}
+
+.page-text-form{
+    font-size: 20px;
+    color: rgb(149,149,149);
+}
+
+.page-text-infor-bold{
+    margin: 0px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #615c5c;
+}
+
+.btn.focus, .btn:focus, .btn:hover{
+    color: #fff !important;
+}
+
+.left{float: left}
+.right{float: right}
+.button-pdv{
+    float: right;
+    background:#2E8B57;
+    color: rgb(255,255,255);
+    font-size: 18px;
+    border-radius: 0px;
+}
+.button-default-pdv{
+    background-color: #2E8B57 !important;
+    border-radius: 0px;
+}
+.button-file-pdv{
+    border-radius: 0px;
+    background: #2E8B57;
+    color: rgb(255,255,255);
+}
+.btn-default{
+    color: #fff !important;
+    background-color: #c9c9c9 !important;
+    border-color: #ccc !important;
+}
+.btn-primary{
+    color: #fff !important;
+    background-color: #5C889C !important;
+
+    border-color: #5C889C !important;
+}
+
+.table > thead > tr > th{
+    color: #8FBC8F !important;
+    font-size: 18px;
+}
+
+.table > tbody > tr > td {
+    color: rgb(52,52,52) !important;
+    font-size: 18px;
+}
+
+.modal-title{
+    color: rgb(41,41,41) !important;
+    text-align: center;
+}
+.close{
+    color: #5C889C !important;
+    opacity: 10 !important;
+}
+.checkbox > label{
+    color: rgb(14,14,14) !important;
+    font-size: 17px;
+}
+.validation-invalid{
+    font-size: 10px;
+    color: red;
+}
+
+
+.button-pdv-no-background {
+    float: right;
+    color: rgb(255,255,255);
+    font-size: 18px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-color: #5C889C;
+    color: #5C889C;
+}
+.img-thumbnail img{
+    height: 80px;
+    width: 90px;
+    margin: 15px;
+}
+#thumbnails{
+    padding-top: 10px;
+    display: flex;
+}
+.img-fileinput{
+    display: inline;
+    padding: 3px;
+    margin-left: 10px;
+}
+.btn-delete-img{
+    margin-right: 5px;
+    margin-top: 1px;
+    font-size: 15px;
+    color: rgb(144, 127, 127);
+    font-style: normal;
+}
+.m-t-1{
+    margin-top: 2px;
+}
+.m-t-2{
+    margin-top: 4px;
+}
+.m-t-3{
+    margin-top: 6px;
+}
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover{
+    background-color: #F0F8FF !important;
+    border-color: #F0F8FF !important;
+}
+.badge{
+    background:#2F4F4F !important;
+}

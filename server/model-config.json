@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false,
+    "strict": true
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false,
+    "strict": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "emailDataSource"
+  },
+  "GroupPermissions": {
+    "dataSource": "lotofacil",
+    "public": true
+  },
+  "GroupPermissionsUsers": {
+    "dataSource": "lotofacil",
+    "public": true
+  },
+  "Salesperson": {
+    "dataSource": "lotofacil",
+    "public": true
+  },
+  "NumerosSortiados": {
+    "dataSource": "lotofacil",
+    "public": true
+  },
+  "ForgotPassword": {
+    "dataSource": null,
+    "public": true
+  },
+  "NumerosMegaSena": {
+    "dataSource": "lotofacil",
+    "public": true
+  }
+}

@@ -1,0 +1,66 @@
+<div class="head">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a class="navbar-brand" ui-sref="products">
+                            <img src="/assets/img/gerador-da-sorte.png" class="logo1" style="width: 200px; height: 70px;" />
+                        </a>
+                    </div>
+                    <div class="col-md-10 text-center">
+                        <br><h3></h3>
+                    </div>
+                </div>
+
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle  user-login" data-toggle="dropdown" href="javascript:void(0)">{{credentials.login}}
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" >
+                        <li role="separator" class="divider"></li>
+                        <li><a ng-click="logout()" href="#">Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<div class="menu">
+        <nav class="navbar navbar-default navbar-menu ">
+            <div class="container-fluid">
+               
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ng-repeat="item in menu">
+                            <a ng-show="!item.sub " ui-sref="{{item.sref}}">{{item.label}}</a>
+                            
+                            <a 
+                                ng-if="item.sub"
+                                class="dropdown-toggle" 
+                                data-toggle="dropdown" 
+                                role="button" 
+                                aria-haspopup="true" 
+                                aria-expanded="false">
+                                {{item.label}} <span class="caret"></span>
+                            </a>
+                            
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="itemSub in item.sub">
+                                    <a ui-sref="{{itemSub.sref}}" ng-if="!itemSub.hide">{{itemSub.label}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+
+
+<!-- modal -->
+<user-manager-edit-pass-component />

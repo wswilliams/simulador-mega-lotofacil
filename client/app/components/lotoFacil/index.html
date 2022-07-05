@@ -1,0 +1,35 @@
+<div class="page-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="page-top-text">Gerar jogos da loto facil baseado no conjunto de dados do xls</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+ <div class="row">
+    <form id="uploadForm" name="uploadForm">
+        <div class="input-group">
+            <input type="text" class="form-control" readonly>
+            <label class="input-group-btn">
+                <span class="btn button-file-pdv">
+                    upload
+                    <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
+                    <input type="file" style="display: none;"  nv-file-select uploader="uploader" accept=".xlsx">
+                </span>
+            </label>
+        </div>
+        <br>
+        <button type="button" class="btn button-pdv"
+                ng-click="submit(uploadForm)"
+                ng-disabled="!saveButton">
+            Salvar
+        </button>
+        
+    </form>
+    <br><br><br>
+</div>
+</div>

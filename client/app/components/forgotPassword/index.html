@@ -1,0 +1,80 @@
+<form name="FormForgotPassword" id="FormForgotPassword">
+    <div class="modal fade" id="modalForgotPassword" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" style='text-align: center;'>Recuperação de Senha</h4>
+                </div>
+                <!--body modal-->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    validator='required,email'
+                                    ng-model='login'
+                                    placeholder="E-mail"
+                                    class="form-control"
+                                    name="name" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" ng-if="msg" >
+                                <p ng-bind-html="message"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button  type="submit" class="btn btn-md button-pdv right" validation-submit="FormForgotPassword" ng-click="save()" ng-show='!loading'>
+                        Salvar
+                    </button>
+
+                    <button class="btn btn-md button-pdv" disabled ng-show='loading'>
+                        <span class="loading">
+                            <i class="glyphicon glyphicon-refresh spinning"></i>
+                            Aguarde...
+                        </span>
+                    </button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+<style>
+
+    #FormForgotPassword button{
+        background-color: #5C889C;
+        color: white;
+    }
+
+    .glyphicon.spinning {
+        animation: spin 1s infinite linear;
+        -webkit-animation: spin2 1s infinite linear;
+    }
+
+    @keyframes spin {
+        from { transform: scale(1) rotate(0deg); }
+        to { transform: scale(1) rotate(360deg); }
+    }
+
+    @-webkit-keyframes spin2 {
+        from { transform: scale(1) rotate(0deg); }
+        to { transform: scale(1) rotate(360deg); }
+    }
+
+</style>

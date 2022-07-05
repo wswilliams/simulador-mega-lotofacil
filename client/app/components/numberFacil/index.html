@@ -1,0 +1,168 @@
+<div class="page-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="page-top-text">Gerar jogos da loto facil baseado no conjunto de dados do aquivo xls contendo: {{list_testSet.length}}, numeros</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">Numeros em ordem Crescente</div>
+
+            <div class="panel-body">
+
+                <div class="alert alert-warning">
+                    <strong>OBSERVAÇÃO:</strong>
+                    <br>
+                    <strong>N</strong> = Numero que consta na planilha xls
+                    <br>
+                    <strong>R</strong> = Repetições, quantidade devezes que o numero se repete na planilha xls
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-md-3" ng-repeat="item in list_testSet track by $index">
+                            <a class="thumbnail">
+                                    <b>N:</b> {{item.numero}},
+                                    <b>R:</b> {{item.qtd}} </span>
+                            </a>
+                    </div>
+                </div>
+                <br>
+                <br> 
+
+
+                <div class="alert alert-warning">
+                    <strong>OBSERVAÇÃO:</strong>
+                    <br>
+                    <strong>Fixos</strong> = Numeros que tiveram uma maior pontuação (por repetições). Por tanto estarão em todos
+                    os jogos finais
+                    <br>
+                    <strong>Fora</strong> = Numeros que tiveram uma menor pontuação (por repetições) Por tanto ficarão de fora de
+                    todos os jogos finais
+                </div>
+                <br>
+                <span class="badge badge-pill badge-dark">
+                    <b>Fixos: </b>
+                </span>
+               
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.numberFix track by $index">
+                                <a class="thumbnail">
+                                        <b>N:</b> {{item.numero}},
+                                        <b>R:</b> {{item.qtd}} </span>
+                                </a>
+                        </div>
+                </div>
+                </br>
+                <span class="badge badge-pill badge-dark">
+                    <b>Fora:</b>
+                </span>
+                
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.numberOut track by $index">
+                                <a class="thumbnail">
+                                        <b>N:</b> {{item.numero}},
+                                        <b>R:</b> {{item.qtd}} </span>
+                                </a>
+                        </div>
+                </div>
+                <br>
+                <br>
+                <div class="alert alert-warning">
+                    <strong>OBSERVAÇÃO:</strong>
+                    <br>
+                    <strong>Conjuntos</strong> = A, B, C, D, E - Formados com numeros em ordem crescente de 1 à 25
+                    <br>
+                    <strong> Que não estão contido nos conjutos (Fixos, Fora) e são únicos em seus respectivos conjutos</strong>
+                </div>
+                <br>
+                <span class="badge badge-pill badge-dark">
+                    <b>conjunto A:</b>
+                </span>
+                
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.listSet.listsetA track by $index">
+                                <a class="thumbnail">
+                                        <b>N:</b> {{item}}
+                                </a>
+                        </div>
+                </div>
+
+                </br>
+                <span class="badge badge-pill badge-dark">
+                    <b>conjunto B:</b>
+                </span>
+                
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.listSet.listsetB track by $index">
+                                <a class="thumbnail">
+                                        <b>N:</b> {{item}}
+                                </a>
+                        </div>
+                </div>
+                <br>
+                <span class="badge badge-pill badge-dark">
+                    <b>conjunto C:</b>
+                </span>
+                <br>
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.listSet.listsetC track by $index">
+                                <a class="thumbnail">
+                                   <b>N:</b> {{item}}
+                                </a>
+                        </div>
+                </div>
+
+                <br>
+                <br>
+                <div class="alert alert-warning">
+                    <strong>OBSERVAÇÃO:</strong>
+                    <br>
+                    <strong>Jogos</strong> = 1 à 3 - Formados com a junção dos respectivos conjuntos A, B, C
+                    <br>
+                </div>
+                <br>
+                <span class="badge badge-pill badge-dark">
+                    <b>Jogo 1, AB-FIXO:</b>
+                </span>
+                
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.listSet.listsetAB track by $index">
+                                <a class="thumbnail">
+                                        <b>N:</b> {{item}}
+                                </a>
+                        </div>
+                </div>
+
+                <br>
+                <span class="badge badge-pill badge-dark">
+                    <b>Jogo 2, AC-FIXO:</b>
+                </span>
+                
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.listSet.listsetAC track by $index">
+                                <a class="thumbnail">
+                                        <b>N:</b> {{item}}
+                                     </a>
+                        </div>
+                </div>
+                <br>
+                <span class="badge badge-pill badge-dark">
+                    <b>Jogo 3, BC-FIXO:</b>
+                </span>
+                
+                <div class="row">
+                        <div class="col-xs-6 col-md-3" ng-repeat="item in uniqueArrayNumero.listSet.listsetBC track by $index">
+                                <a class="thumbnail">
+                                        <b>N:</b> {{item}}
+                                     </a>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
